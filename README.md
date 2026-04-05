@@ -1,43 +1,71 @@
-# oh-my-kimi (Python Edition)
+# oh-my-kimi (Python Edition) 🐍
 
-A high-performance, Python-native orchestrator for **Kimi Code CLI**.
+<p align="center">
+  <em>A high-performance, Python-native orchestrator for <strong>Kimi Code CLI</strong>.</em>
+</p>
+
+> [!TIP]
+> **Which edition should I use?**
+> - **🐍 Python Edition (Current)**: **Recommended.** Best for AI researchers, algorithm engineers, and Python-native workflows.
+> - **📦 [NPM Edition](https://github.com/wang-h/oh-my-kimi)**: Best for full-stack developers and Node.js users.
+
+---
 
 ## Overview
-This is the Python port of the `oh-my-kimi` orchestration framework. It aims to provide deep integration with the Python-based `kimi-cli` ecosystem, enabling multi-agent collaboration, advanced skill management, and automated workflows.
+This is the official Python port of the `oh-my-kimi` orchestration framework. It provides **deep integration** with the Python-based `kimi-cli` ecosystem, enabling multi-agent collaboration, advanced skill management, and automated workflows without the overhead of cross-language bridging.
 
-## Features (Roadmap)
-- [x] **Path Management**: Unified resolution for `.kimi` and legacy `.codex` environments.
-- [x] **Modern CLI**: Built with `Typer` and `Rich` for a beautiful terminal experience.
-- [ ] **Kimi-CLI Integration**: Direct interaction with the native Kimi Python environment.
-- [ ] **Agentic Workflows**: Support for `AGENTS.md` orchestration in Python.
-- [ ] **Plugin System**: Easy Python-based skill development.
+## Why Python Edition?
+- **Native Integration**: Seamlessly share configurations, context, and environment variables with Kimi-CLI.
+- **Python Skills**: Write custom agent skills in pure Python (`main.py`) instead of just Markdown.
+- **Modern Performance**: Built with `Typer`, `Rich`, and `libtmux` for a fast, beautiful terminal experience.
+- **No Node.js Required**: Pure Python environment, easy to install via `pip` or `uv`.
+
+## Core Features
+- [x] **Smart Pathing**: Unified resolution for `~/.kimi` and legacy `.codex` homes.
+- [x] **Instruction Overlay**: Dynamic `AGENTS.md` injection with automated **Codebase Map** generation.
+- [x] **Tmux Orchestration**: One-click multi-agent team setup (`omk team`).
+- [x] **Real-time HUD**: High-refresh monitoring dashboard via `rich.live`.
+- [x] **MCP Infrastructure**: Python-native Model Context Protocol servers for state and memory.
 
 ## Getting Started
 
 ### Prerequisites
 - Python 3.10+
+- `kimi-cli` (Python version)
 
-### Installation (Development)
+### Installation
 ```bash
-# Clone the repository (if not already in it)
-cd oh-my-kimi-python
+# Recommended: Install using uv for speed
+uv pip install -e .
 
-# Create a virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install in editable mode
+# Or using standard pip
 pip install -e .
 ```
 
 ### Usage
 ```bash
-# Check environment info
-omk-py info
+# Check your environment
+omk info
 
-# Say hello
-omk-py hello --name YourName
+# Launch a multi-agent team
+omk team "Refactor this module into cleaner abstractions"
+
+# Single-turn ask with project context
+omk ask "How does the plugin system work?"
 ```
+
+## Comparison
+
+| Feature | Python Edition (🐍) | NPM Edition (📦) |
+| --- | --- | --- |
+| **Language** | Python 3.10+ | TypeScript / Rust |
+| **Integration** | Native (import/env) | Subprocess / Wrapper |
+| **Skill Type** | Python (.py) & Markdown | Markdown (.md) |
+| **Best For** | AI/Data Scientists | Full-stack Devs |
+| **CLI Framework** | Typer / Rich | Yargs / Inquirer |
+
+## Documentation
+For more guides and a full skill catalog, visit the [Official Website](https://wang-h.github.io/oh-my-kimi-website/).
 
 ## License
 MIT
