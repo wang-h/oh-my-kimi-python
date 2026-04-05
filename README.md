@@ -1,0 +1,43 @@
+# oh-my-kimi (Python Edition)
+
+A high-performance, Python-native orchestrator for **Kimi Code CLI**.
+
+## Overview
+This is the Python port of the `oh-my-kimi` orchestration framework. It aims to provide deep integration with the Python-based `kimi-cli` ecosystem, enabling multi-agent collaboration, advanced skill management, and automated workflows.
+
+## Features (Roadmap)
+- [x] **Path Management**: Unified resolution for `.kimi` and legacy `.codex` environments.
+- [x] **Modern CLI**: Built with `Typer` and `Rich` for a beautiful terminal experience.
+- [ ] **Kimi-CLI Integration**: Direct interaction with the native Kimi Python environment.
+- [ ] **Agentic Workflows**: Support for `AGENTS.md` orchestration in Python.
+- [ ] **Plugin System**: Easy Python-based skill development.
+
+## Getting Started
+
+### Prerequisites
+- Python 3.10+
+
+### Installation (Development)
+```bash
+# Clone the repository (if not already in it)
+cd oh-my-kimi-python
+
+# Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install in editable mode
+pip install -e .
+```
+
+### Usage
+```bash
+# Check environment info
+omk-py info
+
+# Say hello
+omk-py hello --name YourName
+```
+
+## License
+MIT
