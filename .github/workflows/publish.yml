@@ -1,0 +1,34 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*' # 当推送以 v 开头的标签时触发 (例如 v0.1.0)
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  build-n-publish:
+    name: Build and publish Python distro to PyPI
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/oh-my-kimi-python
+    permissions:
+      id-token: write # 必须：用于 OIDC 认证
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
+    - name: Build distribution
+      run: uv build
+
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
