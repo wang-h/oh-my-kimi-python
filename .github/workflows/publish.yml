@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/oh-my-kimi-python
+      url: https://pypi.org/p/oh-my-kimi
     permissions:
       id-token: write # 必须：用于 OIDC 认证
 

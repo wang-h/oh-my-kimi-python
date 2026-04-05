@@ -3,13 +3,26 @@ name = "oh-my-kimi"
 version = "0.1.0"
 description = "A Python-based orchestrator for Kimi Code CLI"
 readme = "README.md"
+authors = [{ name = "hao", email = "hao@example.com" }]
+license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = [
-    "typer[all]>=0.9.0",
+    "typer>=0.9.0",
     "rich>=13.0.0",
     "pydantic>=2.0.0",
     "tomlkit>=0.12.0",
+    "libtmux>=0.30.0",
+    "mcp>=1.0.0",
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://wang-h.github.io/oh-my-kimi-website/"
+Repository = "https://github.com/wang-h/oh-my-kimi-python"
 
 [project.scripts]
 omk-py = "omk.main:app"
